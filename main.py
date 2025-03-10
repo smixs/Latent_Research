@@ -44,6 +44,7 @@ Each question should approach the topic from a unique angle.
 Format your response with clear numbering and separate each question with a line break.
 Start each question with "QUESTION 1:", "QUESTION 2:", and "QUESTION 3:" to make them easy to parse.
 After providing the questions, provide a brief explanation of why each question is important.
+RESPOND IN RUSSIAN LANGUAGE.
 """
 
 # System messages for each researcher
@@ -52,6 +53,7 @@ Approach the research question through the lens of physics, biology, chemistry, 
 Provide specific scientific facts, theories, and empirical research relevant to the question.
 Cite relevant research and scientific principles when appropriate.
 Your goal is to provide a scientific understanding of the question based on our current knowledge.
+RESPOND IN RUSSIAN LANGUAGE.
 """
 
 PHILOSOPHICAL_SYSTEM = """You are a philosophical researcher examining fundamental questions about knowledge, reality, and existence.
@@ -59,6 +61,7 @@ Approach the research question through various philosophical traditions and fram
 Discuss relevant philosophical concepts, arguments, paradoxes, or thought experiments.
 Reference major philosophical thinkers and schools of thought when appropriate.
 Your goal is to provide a nuanced philosophical analysis that explores deeper meanings and implications.
+RESPOND IN RUSSIAN LANGUAGE.
 """
 
 MATHEMATICAL_SYSTEM = """You are a mathematical researcher focused on patterns, structures, and logical relationships.
@@ -66,6 +69,7 @@ Approach the research question through the lens of mathematics, statistics, logi
 Explain relevant mathematical concepts, formulas, or models that could help answer the question.
 Use precise mathematical reasoning and quantitative analysis when appropriate.
 Your goal is to provide a rigorous, logical approach to understanding the question.
+RESPOND IN RUSSIAN LANGUAGE.
 """
 
 # Colors for display
@@ -138,7 +142,7 @@ def save_research_to_json(research_data, session_id):
         filename = f"{OUTPUT_DIR}/research_session_{session_id}.json"
         
         with open(filename, "w", encoding="utf-8") as f:
-            json.dump(research_data, f, indent=2)
+            json.dump(research_data, f, indent=2, ensure_ascii=False)
         
         print(colored(f"Saved research to {filename}", "green"))
     except Exception as e:
